@@ -33,7 +33,7 @@ Output:
 #include <math.h>
 using namespace std;
 
-bool checkprime(int n)
+bool checkprime(int n)		//	function to if a number 'n' is prime or not.
 {
     if(n<2)
         return false;
@@ -45,12 +45,13 @@ bool checkprime(int n)
 
 void fun(int a, int b)
 {
-	int range = b-a;
-    bool arr[range];
+	int range = b-a;	//	range is the range of the boolean array to be declared
+    bool arr[range];		/*	initializing a boolean array which store whether the element at that index
+					is prime or not.	*/
     for(int i=0;i<range;i++)
-        arr[i]=true;
+        arr[i]=true;		//	assuming that all the numbers are prime initially.
     for(int i=0;i<range;i++)
-        if(checkprime(a+i))
+        if(checkprime(a+i))	//	checking for prime-ness of each number from 'a' to 'a+i' i.e. a+b-a, i.e. b.
             cout<<a+i<<endl;
 }
 
