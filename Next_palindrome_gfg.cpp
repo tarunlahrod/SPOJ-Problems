@@ -22,7 +22,7 @@ void generatePalindromeUtil(int num[], int n)
 	while(i >= 0 && num[i] == num[j])
 		i--, j++;
 	
-	if( i < 0 || num[i] < num[j])
+	if(i < 0 || num[i] < num[j])
 		leftsmaller = true;
 
 	while( i >= 0 )
@@ -45,6 +45,7 @@ void generatePalindromeUtil(int num[], int n)
 		else
 			j = mid;
 
+		i = mid - 1;
 		// propagating the carry from rightmost digit of left side
 		// and copying the mirror of the same
 		while( i >= 0)
