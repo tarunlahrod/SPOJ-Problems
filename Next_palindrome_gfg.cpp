@@ -84,18 +84,17 @@ void printNum(int num[], int len)
 	cout<<endl;
 }
 
-void removeInitialZeros(int num[], int n)
+int removeInitialZeros(int num[], int n)
 {
 	int count = 0;
-	for(int i = 0; i < n; i++)
-		if (num[i] != 0)
-		{
-			cout << "count = 0";
-			return;
-		}
-		else
-			count++;
-		cout << "count = " << count;
+	while(!num[count++]);
+	--count;
+
+	for(int i = 0; i < n - count ; i++)
+	{
+		num[i] = num[i+count];
+	}
+	return n-count;
 }
 
 int getlength(char num[])
@@ -121,8 +120,7 @@ int main()
 		for (int i = 0; i < len; i++)
 			num[i] = snum[i] - 48;
 
-		// removeInitialZeros(num, len);
-		// printNum(num, len);
+		len = removeInitialZeros(num, len);
 		generatePalindrome(num, len);
 	}
 }
